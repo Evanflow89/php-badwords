@@ -3,6 +3,12 @@ $text = "Ezechiele 25.17: il cammino dell'uomo timorato è minacciato da ogni pa
 Benedetto sia colui che nel nome della carità e della buona volontà conduce i deboli attraverso la valle delle tenebre; perché egli è in verità il pastore di suo fratello e il ricercatore dei figli smarriti.
 E la mia giustizia calerà sopra di loro con grandissima vendetta e furiosissimo sdegno su coloro che si proveranno ad ammorbare ed infine a distruggere i miei fratelli. E tu saprai che il mio nome è quello del Signore quando farò calare la mia vendetta sopra di te.";
 ?>
+<?php
+$badword = $_GET["badword"];
+?>
+<?php
+$newText = str_replace($badword, "***", $text);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,5 +20,13 @@ E la mia giustizia calerà sopra di loro con grandissima vendetta e furiosissimo
 <body>
     <p><?php echo $text?></p>
     <h3>Lunghezza del testo: <?php echo strlen($text)?> </h3>
+
+    <form>
+        <label for="badword">Inserisci la Badword:</label>
+        <input name="badword" type="text">
+    </form>
+
+    <p><?php echo $newText?></p>
+    <h3>Lunghezza del testo: <?php echo strlen($newText)?> </h3>
 </body>
 </html>
