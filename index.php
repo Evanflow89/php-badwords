@@ -13,5 +13,6 @@ E la mia giustizia calerà sopra di loro con grandissima vendetta e furiosissimo
 </head>
 <body>
     <p><?php echo $text?></p>
+    <h3>Lunghezza del testo: <?php echo strlen($text)?> </h3>
 </body>
 </html>
